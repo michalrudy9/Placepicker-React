@@ -6,6 +6,7 @@ import Modal from "./components/Modal.jsx";
 import DeleteConfirmation from "./components/DeleteConfirmation.jsx";
 import logoImg from "./assets/logo.png";
 import { sortPlacesByDistance } from "./loc.js";
+import AvailablePlaces from "./components/AvailablePlaces.jsx";
 
 const storedIds = JSON.parse(localStorage.getItem("selectedPlaces")) || [];
 const stordPlaces = storedIds.map((id) =>
@@ -100,6 +101,8 @@ function App() {
           fallbackText="Sorting places by distance ..."
           onSelectPlace={handleSelectPlace}
         />
+
+        <AvailablePlaces onSelectPlace={handleSelectPlace} />
       </main>
     </>
   );
