@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import Places from "./Places";
 import Error from "./Error";
 import { sortPlacesByDistance } from "../loc";
-import fetchAvailablePlaces from "../http";
+import { fetchAvailablePlaces } from "../http";
 
 function AvailablePlaces({ onSelectPlace }) {
   const [availablePlaces, setAvaliablePlaces] = useState([]);
