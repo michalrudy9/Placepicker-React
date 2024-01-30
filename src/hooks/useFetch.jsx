@@ -3,13 +3,13 @@ import { useEffect, useState } from "react";
 export function useFetch(fetchFn, initialValue) {
   const [isFetching, setIsFetching] = useState();
   const [error, setError] = useState();
-  const [fetchedData, setFetchData] = useState(initialValue);
+  const [fetchedData, setFetchedData] = useState(initialValue);
   useEffect(() => {
     async function fetchData() {
       setIsFetching(true);
       try {
         const data = await fetchFn();
-        setFetchData(data);
+        setFetchedData(data);
       } catch (error) {
         setError({
           message: error.message || "Failed to fetch data!",
@@ -24,6 +24,7 @@ export function useFetch(fetchFn, initialValue) {
   return {
     isFetching,
     fetchedData,
+    setFetchedData,
     error,
   };
 }
